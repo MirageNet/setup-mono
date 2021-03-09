@@ -1,1 +1,11 @@
-\
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test setup-mono
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./
+    - run: mono --version
+      shell: bash
